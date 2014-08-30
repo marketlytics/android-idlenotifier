@@ -1,6 +1,7 @@
 package com.marketlytics.idlenotifier;
 
 import com.parse.Parse;
+import com.parse.ParseInstallation;
 import com.parse.PushService;
 
 public class Application extends android.app.Application {

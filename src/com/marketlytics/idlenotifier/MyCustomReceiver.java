@@ -20,7 +20,7 @@ private static final String TAG = "MyCustomReceiver";
     	
       SharedPreferences  preferences = context.getSharedPreferences("MyPreferences", Context.MODE_PRIVATE);
       // Only configure if the service is "ON"
-      if(preferences.getBoolean("account_id", false)) {
+      if(preferences.getBoolean(Constants.KEY_ID, false)) {
     	  JSONObject json = new JSONObject(intent.getExtras().getString("com.parse.Data"));
     	  
           String status = json.getString("status");
@@ -29,12 +29,12 @@ private static final String TAG = "MyCustomReceiver";
           AudioManager am = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);   
 
           if(status.equals("active")) {
-        	  Toast.makeText(context, "Device is now slient.", Toast.LENGTH_LONG).show();
-        	  am.setRingerMode(AudioManager.RINGER_MODE_SILENT);
+        	  Toast.makeText(context, "Your computer is active.", Toast.LENGTH_LONG).show();
+        	  am.setRingerMode(preferences.getInt(Constants.ACTIVE_MODE, 0));
           } 
           else {
-        	  Toast.makeText(context, "Restoring normal mode.", Toast.LENGTH_LONG).show();
-        	  am.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
+        	  Toast.makeText(context, "Your computer is now idle.", Toast.LENGTH_LONG).show();
+        	  am.setRingerMode(preferences.getInt(Constants.DEFAULT_MODE, 0));
           }
       }
       
