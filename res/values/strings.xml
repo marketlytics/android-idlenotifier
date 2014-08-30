@@ -5,4 +5,22 @@
     <string name="action_settings">Settings</string>
     <string name="alert_dialog_success">Saved!</string>
 	<string name="alert_dialog_failed">Failed with error.</string>
+	<string name="helpText">
+	    What is this application? \n\n
+	    This is an application which monitors and sets your phones audio settings according to how you are working on your computer. \n\n\n
+	    
+	    How do I use this app? \n\n
+	    You need to install the Chrome extension (called IdleNotifier) on your computer. The email you authorize needs to match the email 
+	    you select on the app. Once you give access, your phone and extension will be linked, allowing it to inform when your computer
+	    is idle or busy. \n\n\n
+	    
+	    How do I know the app is not malicious? \n\n
+	    You can review all the source code on Github - just search for marketlytics-idlenotifier. \n\n\n
+	    
+	    \n\n
+	    Author: Mashhood Rastgar\n
+	    Company: Marketlytics
+	    
+	    
+	</string>
 </resources>

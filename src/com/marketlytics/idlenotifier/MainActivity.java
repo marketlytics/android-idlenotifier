@@ -8,10 +8,10 @@ import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
 
 
 	SharedPreferences preferences;
-	 
+	
 	Spinner sAccountList, activeModeSpinner, defaultModeSpinner;
 	TextView tvLinkedToChrome; 
 	ToggleButton toggleButtonService;
@@ -54,6 +54,7 @@ public class MainActivity extends Activity {
 		sAccountList = (Spinner) findViewById(R.id.spinnerAccountList);
 		activeModeSpinner= (Spinner) findViewById(R.id.activeModeSpinner);
 		defaultModeSpinner = (Spinner) findViewById(R.id.defaultModeSpinner);
+		
 		
 		tvLinkedToChrome = (TextView) findViewById(R.id.textViewLinkedToChrome);
 		toggleButtonService = (ToggleButton) findViewById(R.id.toggleButtonService);
@@ -85,7 +86,7 @@ public class MainActivity extends Activity {
 		 // Create an ArrayAdapter using the string array and a default spinner layout
 	    List<String> modes = new ArrayList<String>();
         modes.add("Silent");
-        modes.add("Viberate");
+        modes.add("Vibrate");
         modes.add("Normal");
         
         ArrayAdapter<String> anotherDataAdapter = new ArrayAdapter<String>(this,
@@ -110,7 +111,11 @@ public class MainActivity extends Activity {
         	    }
             }
          });
-	   
+		
+	}
+	
+	public void showHelp(View view) {
+		startActivity(new Intent(getApplicationContext(), HelpActivity.class));
 	}
 
 	@Override

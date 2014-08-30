@@ -72,6 +72,7 @@
 		    <action android:name="com.marketlytics.idlenotifier.LINKED_CHROME" />
 		  </intent-filter>
 		</receiver>
+		<activity android:name="HelpActivity" android:label="Help"></activity>
     </application>
 
 </manifest>
